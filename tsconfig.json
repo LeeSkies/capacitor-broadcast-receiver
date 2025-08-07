@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2017",
+    "lib": ["es2017", "dom", "dom.iterable", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "dist/esm",
+    "declarationDir": "dist/esm"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "android", "ios"]
+}
