@@ -22,7 +22,38 @@ const CommonActions = {
     LOCALE_CHANGED: 'android.intent.action.LOCALE_CHANGED',
 };
 
-const BroadcastReceiver = core.registerPlugin('BroadcastReceiver');
+const BroadcastReceiver = core.registerPlugin('BroadcastReceiver', {
+    web: () => Promise.resolve().then(function () { return web; }).then((m) => new m.BroadcastReceiverWeb()),
+});
+
+class BroadcastReceiverWeb extends core.WebPlugin {
+    async startListening(_options) {
+        throw this.unimplemented('Not implemented on web.');
+    }
+    async stopListening(_options) {
+        throw this.unimplemented('Not implemented on web.');
+    }
+    async stopAllListening() {
+        throw this.unimplemented('Not implemented on web.');
+    }
+    async getActiveListeners() {
+        throw this.unimplemented('Not implemented on web.');
+    }
+    addListener(_eventName, _listenerFunc) {
+        const handle = {
+            remove: async () => {
+                throw this.unimplemented('Not implemented on web.');
+            }
+        };
+        const promise = Promise.resolve(handle);
+        return Object.assign(promise, handle);
+    }
+}
+
+var web = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    BroadcastReceiverWeb: BroadcastReceiverWeb
+});
 
 exports.BroadcastReceiver = BroadcastReceiver;
 exports.CommonActions = CommonActions;
