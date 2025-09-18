@@ -19,9 +19,7 @@ var capacitorBroadcastReceiver = (function (exports, core) {
         LOCALE_CHANGED: 'android.intent.action.LOCALE_CHANGED',
     };
 
-    const BroadcastReceiver = core.registerPlugin('BroadcastReceiver', {
-        web: () => console.error('BroadcastReceiver is not available on web'),
-    });
+    const BroadcastReceiver = core.registerPlugin('BroadcastReceiver');
 
     exports.BroadcastReceiver = BroadcastReceiver;
     exports.CommonActions = CommonActions;

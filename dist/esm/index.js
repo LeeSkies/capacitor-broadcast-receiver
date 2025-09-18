@@ -1,6 +1,4 @@
 import { registerPlugin } from '@capacitor/core';
-const BroadcastReceiver = registerPlugin('BroadcastReceiver', {
-    web: () => console.error('BroadcastReceiver is not available on web'),
-});
+const BroadcastReceiver = registerPlugin('BroadcastReceiver');
 export * from './definitions';
 export { BroadcastReceiver };
